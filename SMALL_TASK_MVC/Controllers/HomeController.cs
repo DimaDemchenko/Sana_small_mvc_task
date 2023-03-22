@@ -18,6 +18,16 @@ namespace SMALL_TASK_MVC.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Check(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("User", user);
+            }
+
+            return View("Index");
+        }
         public IActionResult Privacy()
         {
             return View();
